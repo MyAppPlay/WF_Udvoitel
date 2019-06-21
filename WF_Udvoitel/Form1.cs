@@ -90,12 +90,12 @@ namespace WF_Udvoitel
                 if (xod % 2 == 0)
                 {
                     i++;
-                    xod = xod / 2;
+                    xod /= 2;
                 }
                 else
                 {
                     i++;
-                    xod = xod - 1;
+                    xod -= 1;
                 }
             }
             MessageBox.Show($"Создай число {chislo} за {i} ходов", "Задача");
