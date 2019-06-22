@@ -44,10 +44,10 @@ namespace WF_Ugadayka
                 else
                 {
                     MessageBox.Show("Угадано", "Победа");
-                    
-                   Close();
+
+                    Close();
                     return;
-                   
+
 
                 }
 
@@ -56,7 +56,7 @@ namespace WF_Ugadayka
             }
             catch
             {
-             
+
                 MessageBox.Show("Нужна цифра", "Ошибка");
 
             }
