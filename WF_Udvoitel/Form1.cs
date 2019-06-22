@@ -33,14 +33,18 @@ namespace WF_Udvoitel
 
 
         }
-        public Stack<string> revers = new Stack<string>();
+        public Stack<string> revers = new Stack<string>();//Массив стека
 
         private void BtnCommand1_Click(object sender, EventArgs e)
         {
-            
             lblNumber.Text = (int.Parse(lblNumber.Text) + 1).ToString();
             lblChekC2.Text = (int.Parse(lblChekC2.Text) + 1).ToString();
             revers.Push(lblNumber.Text);
+            if (i == int.Parse(lblChekC2.Text) && proverka == int.Parse(lblNumber.Text))
+            {
+                MessageBox.Show("Вам это удалось", "Победа");
+                i = 0;
+            }
 
 
         }
@@ -50,9 +54,14 @@ namespace WF_Udvoitel
             lblNumber.Text = (int.Parse(lblNumber.Text) * 2).ToString();
             lblChekC2.Text = (int.Parse(lblChekC2.Text) + 1).ToString();
             revers.Push(lblNumber.Text);
+            if (i == int.Parse(lblChekC2.Text) && proverka == int.Parse(lblNumber.Text))
+            {
+                MessageBox.Show("Вам это удалось", "Победа");
+                i = 0;
+            }
         }
 
-        private void BtnReset_Click(object sender, EventArgs e)
+        public void BtnReset_Click(object sender, EventArgs e)
         {
             lblNumber.Text = "1";
             lblChekC2.Text = "0";
@@ -60,28 +69,33 @@ namespace WF_Udvoitel
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
         {
 
         }
+        int i = 0;//переменная для цикла подсчта минимума ходов
+        int proverka;
 
         private void PlayMenuItem_Click(object sender, EventArgs e)//кнопка играть
         {
+            i = 0;
+            BtnReset_Click(sender, e);
             Random rnd = new Random();
-            int chislo = rnd.Next(2, 10);
+            int chislo = rnd.Next(2, 99);
             int xod = chislo;
-            int i = 0;//переменная для цикла подсчта минимума ходов
-            while(xod != 1){
-                
+            proverka = chislo;
+            while (xod != 1)
+            {
+
                 if (xod % 2 == 0)
                 {
                     i++;
-                    xod = xod / 2;
+                    xod /= 2;
                 }
                 else
                 {
                     i++;
-                    xod = xod - 1;
+                    xod -= 1;
                 }
             }
             MessageBox.Show($"Создай число {chislo} за {i} ходов", "Задача");
@@ -90,9 +104,14 @@ namespace WF_Udvoitel
 
         private void BtnBack_Click(object sender, EventArgs e)//кнопка отмены
         {
-            lblNumber.Text = revers.Pop();//требуется помощь.. кнопка отмены срабатывает только со второго нажатия
-            lblChekC2.Text = (int.Parse(lblChekC2.Text) - 1).ToString();
+            try
+            {
+                revers.Pop();
+                lblNumber.Text = revers.Peek();//присвоение предыдущего значения
 
+                lblChekC2.Text = (int.Parse(lblChekC2.Text) - 1).ToString();
+            }
+            catch { };//устранение реакции на ошибку
         }
     }
 }
