@@ -23,31 +23,29 @@ namespace WF_Ugadayka
         {
 
             InitializeComponent();
-            tB_Otv.Text = ("");
-            tB_sravn.Text = ("");
-            bt_play.Text = ("Играть");
-
+            bt_play.Text = ("Играть в Угадайку");
+            btn_Play_Udvoitel.Text = "Играть в Удвоитель";
         }
+
+
+
+
         private void TB_Otv_TextChanged(object sender, EventArgs e)
         {
 
         }
-        public int chisl;
 
 
         public void Bt_otv_Click(object sender, EventArgs e)
         {
 
-            Form3 newForm = new Form3();
-            newForm.Show();
+            Form3 form3 = new Form3();
+            form3.Show();
         }
 
-        public void MenuPlay_Click(object sender, EventArgs e)
+        private void Btn_Play_Udvoitel_Click(object sender, EventArgs e)
         {
-
-
-
+           // Application.Run(new Form1());
         }
-
     }
 }

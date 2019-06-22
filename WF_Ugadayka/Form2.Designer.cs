@@ -28,72 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tB_Otv = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.bt_play = new System.Windows.Forms.Button();
-            this.lb_NameGame = new System.Windows.Forms.Label();
-            this.tB_sravn = new System.Windows.Forms.TextBox();
+            this.btn_Play_Udvoitel = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // tB_Otv
-            // 
-            this.tB_Otv.Location = new System.Drawing.Point(355, 166);
-            this.tB_Otv.Name = "tB_Otv";
-            this.tB_Otv.Size = new System.Drawing.Size(100, 20);
-            this.tB_Otv.TabIndex = 0;
-            this.tB_Otv.Visible = false;
-            this.tB_Otv.TextChanged += new System.EventHandler(this.TB_Otv_TextChanged);
             // 
             // bt_play
             // 
-            this.bt_play.Location = new System.Drawing.Point(355, 92);
+            this.bt_play.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bt_play.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt_play.Image = ((System.Drawing.Image)(resources.GetObject("bt_play.Image")));
+            this.bt_play.Location = new System.Drawing.Point(-5, 12);
             this.bt_play.Name = "bt_play";
-            this.bt_play.Size = new System.Drawing.Size(100, 23);
+            this.bt_play.Size = new System.Drawing.Size(388, 389);
             this.bt_play.TabIndex = 1;
-            this.bt_play.Text = "Играть";
+            this.bt_play.Text = "Играть в Угадайку ";
             this.bt_play.UseVisualStyleBackColor = true;
             this.bt_play.Click += new System.EventHandler(this.Bt_otv_Click);
             // 
-            // lb_NameGame
+            // btn_Play_Udvoitel
             // 
-            this.lb_NameGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_NameGame.Location = new System.Drawing.Point(352, 24);
-            this.lb_NameGame.Name = "lb_NameGame";
-            this.lb_NameGame.Size = new System.Drawing.Size(103, 23);
-            this.lb_NameGame.TabIndex = 3;
-            this.lb_NameGame.Text = "УгадайкА";
-            this.lb_NameGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tB_sravn
-            // 
-            this.tB_sravn.Location = new System.Drawing.Point(355, 215);
-            this.tB_sravn.Name = "tB_sravn";
-            this.tB_sravn.Size = new System.Drawing.Size(100, 20);
-            this.tB_sravn.TabIndex = 4;
-            this.tB_sravn.Visible = false;
+            this.btn_Play_Udvoitel.Location = new System.Drawing.Point(415, 162);
+            this.btn_Play_Udvoitel.Name = "btn_Play_Udvoitel";
+            this.btn_Play_Udvoitel.Size = new System.Drawing.Size(91, 93);
+            this.btn_Play_Udvoitel.TabIndex = 2;
+            this.btn_Play_Udvoitel.Text = "Играть в Удвоитель";
+            this.btn_Play_Udvoitel.UseVisualStyleBackColor = true;
+            this.btn_Play_Udvoitel.Visible = false;
+            this.btn_Play_Udvoitel.Click += new System.EventHandler(this.Btn_Play_Udvoitel_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tB_sravn);
-            this.Controls.Add(this.lb_NameGame);
+            this.ClientSize = new System.Drawing.Size(376, 396);
+            this.Controls.Add(this.btn_Play_Udvoitel);
             this.Controls.Add(this.bt_play);
-            this.Controls.Add(this.tB_Otv);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Угадайка";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox tB_Otv;
         private System.Windows.Forms.Button bt_play;
-        private System.Windows.Forms.Label lb_NameGame;
-        private System.Windows.Forms.TextBox tB_sravn;
+        private System.Windows.Forms.Button btn_Play_Udvoitel;
     }
 }
 

@@ -10,18 +10,20 @@ using System.Windows.Forms;
 
 namespace WF_Ugadayka
 {
-    public partial class Form3 : Form2
+    public partial class Form3 : Form
     {
         public Form3()
         {
             InitializeComponent();
-            tB_otvet.Text = "Пиши число здесь";
-            bt_proverka.Text = "Проверить";
+            tB_otvet.Text = "ЧислО";
+            bt_proverka.Text = "ПроверитЬ";
+            lb_hod.Text = "7";
 
             Random ch = new Random();
-            chisl = ch.Next(1, 100);
-        }
+            chislo = ch.Next(1, 100);
 
+        }
+        public int chislo;
         private void TB_otvet_TextChanged(object sender, EventArgs e)
         {
 
@@ -29,15 +31,37 @@ namespace WF_Ugadayka
 
         private void Bt_proverka_Click(object sender, EventArgs e)
         {
-            if (int.Parse(tB_otvet.Text) < chisl )
+            try
             {
-                MessageBox.Show("Больше", "Ещё");
+                if (int.Parse(tB_otvet.Text) < chislo)
+                {
+                    MessageBox.Show("Больше", "Ещё");
+                }
+                else if (int.Parse(tB_otvet.Text) > chislo)
+                {
+                    MessageBox.Show("Меньше", "Ещё");
+                }
+                else
+                {
+                    MessageBox.Show("Угадано", "Победа");
+                    
+                   Close();
+                    return;
+                   
+
+                }
+
+                lb_hod.Text = (int.Parse(lb_hod.Text) - 1).ToString();
+
             }
-            else if (int.Parse(tB_otvet.Text) > chisl)
+            catch
             {
-                MessageBox.Show("Меньше", "Ещё");
+             
+                MessageBox.Show("Нужна цифра", "Ошибка");
+
             }
-            else MessageBox.Show("Угадано", "Победа");
         }
+
+
     }
 }
