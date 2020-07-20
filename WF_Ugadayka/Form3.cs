@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace WF_Ugadayka
 {
@@ -15,15 +9,15 @@ namespace WF_Ugadayka
         public Form3()
         {
             InitializeComponent();
-            tB_otvet.Text = "ЧислО";
-            bt_proverka.Text = "ПроверитЬ";
-            lb_hod.Text = "7";
+            tB_otvet.Text = @"ЧислО";
+            bt_proverka.Text = @"ПроверитЬ";
+            lb_hod.Text = @"7";
 
             Random ch = new Random();
-            chislo = ch.Next(1, 100);
+            Chislo = ch.Next(1, 100);
 
         }
-        public int chislo;
+        public int Chislo;
         private void TB_otvet_TextChanged(object sender, EventArgs e)
         {
 
@@ -33,21 +27,21 @@ namespace WF_Ugadayka
         {
             try
             {
-                if (int.Parse(tB_otvet.Text) < chislo)
+                if (int.Parse(tB_otvet.Text) < Chislo)
                 {
-                    MessageBox.Show("Больше", "Ещё");
+                    MessageBox.Show(@"Больше", @"Ещё");
                 }
-                else if (int.Parse(tB_otvet.Text) > chislo)
+                else if (int.Parse(tB_otvet.Text) > Chislo)
                 {
-                    MessageBox.Show("Меньше", "Ещё");
+                    MessageBox.Show(@"Меньше", @"Ещё");
                 }
                 else
                 {
-                    MessageBox.Show("Угадано", "Победа");
-                    
-                   Close();
+                    MessageBox.Show(@"Угадано", @"Победа");
+
+                    Close();
                     return;
-                   
+
 
                 }
 
@@ -56,8 +50,8 @@ namespace WF_Ugadayka
             }
             catch
             {
-             
-                MessageBox.Show("Нужна цифра", "Ошибка");
+
+                MessageBox.Show(@"Нужна цифра", @"Ошибка");
 
             }
         }
