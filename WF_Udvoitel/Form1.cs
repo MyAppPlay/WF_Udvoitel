@@ -12,26 +12,11 @@ using System.Windows.Forms;
 
 namespace WF_Udvoitel
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
-            btnCommand1.Text = @"+1";
-            btnCommand2.Text = @"x2";
-            btnReset.Text = @"Сброс";
-            lblNumber.Text = @"1";
-            Text = @"Удвоитель";
-            lblChekC2.Text = @"0";//переменная подсчета отдельных команд
-
-
-
-        }
-
-        public sealed override string Text
-        {
-            get => base.Text;
-            set => base.Text = value;
         }
 
         public Stack<string> Revers = new Stack<string>();//Массив стека
@@ -82,8 +67,8 @@ namespace WF_Udvoitel
             _i = 0;
             BtnReset_Click(sender, e);
             Random rnd = new Random();
-            int chislo = rnd.Next(2, 99);
-            int xod = chislo;
+            var chislo = rnd.Next(1, 100);
+            var xod = chislo;
             _proverka = chislo;
             while (xod != 1)
             {
@@ -118,6 +103,11 @@ namespace WF_Udvoitel
             }
 
             //устранение реакции на ошибку
+        }
+
+        private void lblNumber_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
